@@ -15,9 +15,14 @@
 
         <nav>
           <a src="#" class="hide-desktop">
-            <img src="images/ham.svg" alt="toggle-menu" class="menu" />
+            <img
+              src="images/ham.svg"
+              alt="toggle-menu"
+              class="menu"
+              id="menu"
+            />
           </a>
-          <ul class="show-desktop hide-mobile">
+          <ul id="nav" class="show-desktop hide-mobile">
             <li id="exit" class="exit-btn hide-desktop">
               <img src="images/exit.svg" alt="exit menu" />
             </li>
@@ -106,14 +111,28 @@
         <div class="container">
           <a href="#">
             <img src="images/logo-white.svg" alt="26andFour logo" />
-            <p class="address">Melrose Place, 90210<br />USA</p>
-            <ul class="footer-links">
-              <li><a href="#">Terms of service</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-            </ul>
           </a>
+          <p class="address">Melrose Place, 90210<br />USA</p>
+          <ul class="footer-links">
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
         </div>
       </div>
     </footer>
+    <script>
+      const menu = document.getElementById('menu');
+      const nav = document.getElementById('nav');
+      const exit = document.getElementById('exit');
+
+      menu.addEventListener('click', function(e) {
+        nav.classList.toggle('hide-mobile');
+        e.preventDefault();
+      });
+      exit.addEventListener('click', function(e) {
+        nav.classList.add('hide-mobile');
+        e.preventDefault();
+      });
+    </script>
   </body>
 </html>
